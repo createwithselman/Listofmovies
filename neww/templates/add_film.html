@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="POST">
+        <div class="mb-3">
+            <label for="isim" class="form-label">Film/Dizi İsmi</label>
+            <input type="text" class="form-control" id="isim" name="isim" required>
+        </div>
+        <div class="mb-3">
+            <label for="tur" class="form-label">Tür</label>
+            <input type="text" class="form-control" id="tur" name="tur" required>
+        </div>
+        <div class="mb-3">
+            <label for="yil" class="form-label">Yıl</label>
+            <input type="number" class="form-control" id="yil" name="yil" required>
+        </div>
+        <div class="mb-3">
+            <label for="yorum" class="form-label">Yorum</label>
+            <textarea class="form-control" id="yorum" name="yorum"></textarea>
+        </div>
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="izlendi" name="izlendi">
+            <label class="form-check-label" for="izlendi">İzlendi</label>
+        </div>
+        <button type="submit" class="btn btn-success">Ekle</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Geri Dön</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <a href="{{ url_for('add_film') }}" class="btn btn-primary mb-3">Yeni Film/Dizi Ekle</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>Tür</th>
+                <th>Yıl</th>
+                <th>Yorum</th>
+                <th>İzlendi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for film in filmler %}
+            <tr>
+                <td>{{ film.isim }}</td>
+                <td>{{ film.tur }}</td>
+                <td>{{ film.yil }}</td>
+                <td>{{ film.yorum }}</td>
+                <td>{{ "✅" if film.izlendi else "❌" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
